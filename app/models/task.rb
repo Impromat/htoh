@@ -4,5 +4,7 @@ class Task < ActiveRecord::Base
   has_attached_file :picture,
     styles: { medium: "1200x1200", thumb: "300x300#" }
 
-  validates_presence_of :title, :description, :address, :user
+  validates_presence_of :title, :description, :address, :user, :picture
+
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 end
