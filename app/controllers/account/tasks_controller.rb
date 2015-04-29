@@ -31,6 +31,7 @@ module Account
       else
         render :new
       end
+      authorize @task
     end
 
     private
