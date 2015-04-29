@@ -1,0 +1,11 @@
+<h1>here are all your task</h1>
+
+
+<%@tasks.each do |task|%>
+  <h2><%= link_to tast.title.capitalize.truncate(30), task_path(task.id) %></h2>
+  <%= image_tag(flat.picture) %>
+   Price : <%= task.price %> €
+  <%= task.description.truncate(50) %>
+  <%= link_to("Edit", edit_account_task_path(flat.id), class: "btn btn-default btn-xs btn-right")%>
+  <%= link_to("More details", task_path(flat), class: "btn btn-default btn-xs btn-right")%>
+  <%end%>
