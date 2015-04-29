@@ -1,28 +1,102 @@
-<%= content_for(:title) do %>
-  Home
-<% end %>
+<!DOCTYPE html>
+<html>
+<head>
 
-<%= content_for(:description) do %>
-  <%# TODO %>
-<% end %>
+  <title>Serviu</title>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <h1>Welcome!</h1>
+</head>
 
-      <h2>This is the homepage</h2>
+<body>
 
-      <p>
-        Find me in <code>app/views/pages/home.html.erb</code>
-      </p>
+  <!-- Banner -->
 
-      <p>
-        Thanks to the <a href="https://github.com/thoughtbot/high_voltage">high_voltage</a>
-        gem, if you need more static pages (like <code>/contact</code> or <code>/about-us</code>),
-        just create a file in the <code>app/views/pages</code> folder, the route will be automatically
-        available without you adding any controller or touching the <code>config/routes.rb</code> file!
-      </p>
+  <div id="banner">
+    <div class="filter"></div>
+    <h1>Serviu</h1>
+    <br>
+    <p>La Référence du Service</p>
+    <p>entre Particuliers</p>
+  </div>
+  <div id="features">
+    <div id="features-card">
+      <h2>Les différents types de services</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <div class="serv-list">
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+              <p>Administratif - Asistant personnel</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Babysitting.svg", class: "serv_logos" %>
+                <p>Babysitting</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Bricolage.svg", class: "serv_logos" %>
+                <p>Bricolage - Travaux</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Old.svg", class: "serv_logos" %>
+                <p>Compagnie aux personnes agées</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Shopping.svg", class: "serv_logos" %>
+                <p>Courses</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Covoiturage</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Cuisine</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Déménagement</p><br>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <div  class="serv-list">
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Education - Soutien</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Faire la queue</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Garage</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Gardiennage</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Jardinage</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Livraison</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Ménage - Repassage</p><br>
+              </div>
+              <div class="service">
+                <%= image_tag "Administratif.svg", class: "serv_logos" %>
+                <p>Autre</p><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>

@@ -1,0 +1,79 @@
+#banner {
+  background-image: asset-url("Louvre1.JPG");
+  text-shadow: 1px 1px rgb(220,220,220);
+  background-size: cover;
+  position: relative;
+  height: 702px;
+  margin-top: -50px;
+  z-index: 0;
+  display: block;
+  .filter {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    opacity: 0.2;
+  }
+  h1 {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+    color: white;
+    z-index: 2;
+  }
+  p {
+    font-size: 45px;
+    text-align: center;
+    position: relative;
+    color: rgb(245,245,245);
+    z-index:2;
+    font-weight: 300;
+  }
+}
+
+#features {
+  background-size: cover;
+  height: 800px;
+  padding-right: 100px;
+  padding-left: 100px;
+
+  padding-top: 40px;
+  h2 {
+    font-size: 35px;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+#features-card {
+  background-color: #F6F6F6;
+  padding-bottom: 40px;
+  border-radius: 5px;
+}
+
+.serv-list {
+  padding-left: 120px;
+}
+
+.service {
+  margin-top: 40px;
+  p {
+    font-size: 20px;
+    float: left;
+    line-height: 40px;
+  }
+}
+
+.serv_logos {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+}
+
+
