@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="452px" height="452px" viewBox="0 0 452 452" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+    <title>Your_Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Your_Icon" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval-1" stroke="#979797" fill="#D6181D" sketch:type="MSShapeGroup" cx="225" cy="225" r="225"></circle>
+            <ellipse id="Oval" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="139.456174" cy="159.719532" rx="80.2124636" ry="84.4327247"></ellipse>
+            <ellipse id="Oval" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="226.129449" cy="137.593972" rx="67.6549007" ry="69.3189996"></ellipse>
+            <path d="M228.918178,353.540957 C264.66181,353.540957 298.106024,356.808472 326.749519,362.474035 L326.749519,169.946578 L131.100524,169.946578 L131.100524,362.474035 C159.733754,356.804966 193.177968,353.540957 228.918178,353.540957 L228.918178,353.540957 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <ellipse id="Oval" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="310.543826" cy="159.719532" rx="80.2124636" ry="84.4327247"></ellipse>
+            <path d="M326.749519,363.708117 C326.749519,370.04331 282.947658,381.725027 228.918178,381.725027 C174.895541,381.725027 131.100524,370.04331 131.100524,363.708117 C131.100524,357.376431 174.895541,352.254285 228.918178,352.254285 C282.947658,352.254285 326.749519,357.376431 326.749519,363.708117 L326.749519,363.708117 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

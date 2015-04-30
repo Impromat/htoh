@@ -14,9 +14,8 @@ class User < ActiveRecord::Base
   def image(style)
     if avatar.exists?
       avatar.url(style)
-    else
-      picture
+ #   else
+ #     picture
     end
   end
-
 end
