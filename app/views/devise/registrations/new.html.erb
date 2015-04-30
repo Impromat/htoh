@@ -10,6 +10,10 @@
         <%= f.button :submit, t('.sign_up', default: "Sign up"), class: "btn btn-primary" %>
       <% end %>
 
+      <li>
+        <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook) %>
+      </li>
+
       <%= render "devise/shared/links" %>
     </div>
   </div>

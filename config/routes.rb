@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users # , controllers: {omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
   resources :users do
     get 'profile'
   #     get 'bookings_sent'
@@ -19,3 +20,5 @@ Rails.application.routes.draw do
   #   resources :flats, only: [:index, :new, :create, :show, :edit, :update]
   # end
 end
+
+
