@@ -1,7 +1,10 @@
 source "https://rubygems.org"
-
+source 'https://rails-assets.org'
 ruby "2.2.0"
 
+
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 gem "rails", "4.2.0"
 gem "pg"
 gem "figaro"
@@ -12,6 +15,7 @@ gem "devise"
 gem "pundit"
 gem "paperclip"
 gem "aws-sdk", "< 2.0"
+gem "geocoder"
 
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
@@ -22,6 +26,7 @@ gem "font-awesome-sass"
 gem "rails-i18n"
 gem "devise-i18n"
 gem "devise-i18n-views"
+gem "coffee-script"
 
 group :development, :test do
   gem "spring"
@@ -32,6 +37,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "letter_opener"
+  gem 'bootstrap-datepicker-rails'
 end
 
 group :production do

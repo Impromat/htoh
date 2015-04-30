@@ -7,4 +7,7 @@ class Task < ActiveRecord::Base
   validates_presence_of :title, :description, :address, :user, :picture
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end

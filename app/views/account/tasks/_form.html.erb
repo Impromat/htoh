@@ -1,10 +1,13 @@
 
 <%= simple_form_for(@task, url: (@task.new_record? ? account_tasks_path : account_task_path(@task)), html: { multipart: true }) do |task| %>
-<%= task.input :title, placeholder:"title of your task" %>
-<%= task.input :description, as: :text, input_html: { minlenght: 50}, placeholder:"need to wash my car, is it possible to make a proposal" %>
-<%= task.input :price, placeholder:"100 €" %>
-<%= task.input :address, id: "user_input_autocomplete_address", placeholder:"Your adress" %>
-<%= task.input :picture%>
+  <%= task.input :title, placeholder:"title of your task" %>
+  <%= task.input :description, as: :text, input_html: { minlenght: 50}, placeholder:"need to wash my car, is it possible to make a proposal" %>
+  <%= task.input :price, placeholder:"100 €" %>
+  <%= task.input :city, placeholder:"paris" %>
+  <%= task.input :address, id: "user_input_autocomplete_address", placeholder:"Your adress" %>
+  <%= task.input :date, id: "user_input_autocomplete_date", placeholder:"choose a date" %>
+  <%= task.input :category, collection: ["Aide administratif", "Babysitting","Bricolage - Travaux", "Compagnie 3e âge", "Courses", "Covoiturage", "Cuisine", "Déménagement", "Education - Soutient", "Faire la queue", "Garage", "Gardiennage", "Jardinnage", "Livraison", "Ménage - Repassage", "Autre"]  %>
+  <%= task.input :picture%>
 
-<%= task.submit class: "btn btn-danger" %>
+  <%= task.submit class: "btn btn-danger" %>
 <% end %>

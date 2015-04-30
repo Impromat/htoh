@@ -6,8 +6,6 @@ module Account
 
     def index
       @tasks = policy_scope(Task)
-
-      # if @flats.where(:city)
     end
 
     def edit
@@ -38,7 +36,7 @@ module Account
     private
 
     def task_params
-      params.require(:task).permit(:title, :description, :price, :address, :picture)
+      params.require(:task).permit(:title, :description, :price, :address, :picture, :date, :category, :status, :city)
     end
   end
 end

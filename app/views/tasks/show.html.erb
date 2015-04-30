@@ -1,4 +1,16 @@
 <h1> <%= @task.title %> </h1>
 <p> <%= @task. description %> </p>
 <h2> <%= @task.price %> </h2>
+<h2><%= @task.date %> </h2>
+<h2><%= @task.category %> </h2>
+<h2><%= @task.done %> </h2>
+<h2> <%= image_tag @task.picture.url%></h2>
 
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var coord = <%= raw @flat_coordinates %>;
+    alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+  });
+<% end %>
+<% end %>
