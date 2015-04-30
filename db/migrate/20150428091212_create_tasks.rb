@@ -5,6 +5,9 @@ class CreateTasks < ActiveRecord::Migration
       t.string :description
       t.integer :price
       t.string :address
+      t.date :date
+      t.string :category, array: true
+      t.boolean :done, default: false
       t.references :user, index: true
 
       t.timestamps null: false

@@ -12,6 +12,7 @@ gem "devise"
 gem "pundit"
 gem "paperclip"
 gem "aws-sdk", "< 2.0"
+gem "geocoder"
 
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
@@ -32,6 +33,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "letter_opener"
+  gem 'bootstrap-datepicker-rails'
 end
 
 group :production do

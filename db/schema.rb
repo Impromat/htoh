@@ -42,9 +42,12 @@ ActiveRecord::Schema.define(version: 20150429141011) do
     t.string   "description"
     t.integer  "price"
     t.string   "address"
+    t.date     "date"
+    t.string   "category",                                          array: true
+    t.boolean  "done",                 default: false
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
