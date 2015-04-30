@@ -1,8 +1,8 @@
-<div>
+<div class="padded">
   <%= form_tag(tasks_path, method: :get, class: "form-inline text-center") do %>
     <div class="form-group">
       <%= text_field_tag(:city, params[:city], placeholder: "Where?", class: "form-control") %>
     </div>
-      <%= link_to("find !", tasks_path, class: "btn btn-default btn-xs btn-right")%>
+      <%= link_to("Occupe-toi", tasks_path, class: "btn btn-primary")%>
   <% end %>
 </div>

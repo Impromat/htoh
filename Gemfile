@@ -1,7 +1,10 @@
 source "https://rubygems.org"
-
+source 'https://rails-assets.org'
 ruby "2.2.0"
 
+
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 gem "rails", "4.2.0"
 gem "pg"
 gem "figaro"
@@ -23,6 +26,7 @@ gem "font-awesome-sass"
 gem "rails-i18n"
 gem "devise-i18n"
 gem "devise-i18n-views"
+gem "coffee-script"
 
 group :development, :test do
   gem "spring"

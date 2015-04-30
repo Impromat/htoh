@@ -6,3 +6,11 @@
 <h2><%= @task.done %> </h2>
 <h2> <%= image_tag @task.picture.url%></h2>
 
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var coord = <%= raw @flat_coordinates %>;
+    alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+  });
+<% end %>
+<% end %>
