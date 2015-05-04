@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430144307) do
+ActiveRecord::Schema.define(version: 20150504095210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20150430144307) do
     t.integer  "user_id"
     t.integer  "task_id"
     t.date     "date"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "accepted",   default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "accepted",    default: false
+    t.text     "description"
   end
 
   add_index "bookings", ["task_id"], name: "index_bookings_on_task_id", using: :btree
@@ -42,9 +43,12 @@ ActiveRecord::Schema.define(version: 20150430144307) do
     t.string   "description"
     t.integer  "price"
     t.string   "address"
+    t.date     "date"
+    t.string   "city"
+    t.boolean  "done",                 default: false
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
@@ -74,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150430144307) do
     t.string   "name"
     t.string   "token"
     t.datetime "token_expiry"
+    t.string   "first_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

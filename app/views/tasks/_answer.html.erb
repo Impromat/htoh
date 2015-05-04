@@ -1,0 +1,4 @@
+<%= simple_form_for [@task, @booking], url: task_bookings_path(@task) do |form| %>
+  <%= form.input :description, as: :string %>
+  <%= form.submit "envoyer la proposition", class: "btn btn-default" %>
+<% end %>
