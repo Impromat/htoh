@@ -1,4 +1,4 @@
-sclass BookingsController < ApplicationController
+class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
@@ -23,8 +23,11 @@ sclass BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update_attributes(update_booking_params)
-    redirect_to :back
+    if @booking.update_attributes(update_booking_params)
+      redirect_to "/tasks"
+    else
+      redirect_to :back
+    end
   end
 
   private
