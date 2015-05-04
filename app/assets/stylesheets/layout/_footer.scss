@@ -1,1 +1,14 @@
 // Your footer style
+#footer {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  .social a {
+  color: lightgrey;
+  font-size: 40px;
+  margin: 10px;
+  }
+  .social a:hover {
+  color: grey;
+  }
+}
