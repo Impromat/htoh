@@ -18,6 +18,9 @@
   </div>
 </div>
 
+<%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
+
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
