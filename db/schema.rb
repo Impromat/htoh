@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504095210) do
+ActiveRecord::Schema.define(version: 20150504141219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20150504095210) do
     t.integer  "user_id"
     t.integer  "task_id"
     t.date     "date"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "accepted",    default: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "accepted"
     t.text     "description"
   end
 
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20150504095210) do
     t.string   "address"
     t.date     "date"
     t.string   "city"
-    t.string   "category",                                          array: true
     t.boolean  "done",                 default: false
     t.integer  "user_id"
     t.datetime "created_at",                           null: false
@@ -71,6 +70,7 @@ ActiveRecord::Schema.define(version: 20150504095210) do
     t.datetime "picture_updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "category"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
