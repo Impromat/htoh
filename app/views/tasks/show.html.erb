@@ -8,17 +8,6 @@
 
 <%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
 
-<div id="footer">
-  <div class="social">
-    <ul class="list-inline">
-      <li><a href="#"><i class="fa fa-facebook medium_social"></i></li></a>
-      <li><a href="#"><i class="fa fa-twitter medium_social"></i></li></a>
-      <li><a href="#"><i class="fa fa-google-plus medium_social"></i></li></a>
-      <li><a href="#"><i class="fa fa-linkedin medium_social"></i></li></a>
-      <p>ServiU.com is a compagny by LeWagon</p>
-    </ul>
-  </div>
-</div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>

@@ -38,12 +38,12 @@
               </li>
               <li>
                 <%= link_to user_profile_path(current_user, anchor: 'tasks') do %>
-                  <i class="fa fa-user"></i> <%= t ".profile", default: "Annonces postées" %>
+                  <i class="fa fa-comment"></i> <%= t ".profile", default: "Annonces postées" %>
                 <% end %>
               </li>
               <li>
                 <%= link_to user_profile_path(current_user, anchor: 'tasks', done_tasks: "true") do %>
-                  <i class="fa fa-user"></i> <%= t ".profile", default: "Taches effectuées" %>
+                  <i class="fa fa-check"></i> <%= t ".profile", default: "Taches effectuées" %>
                 <% end %>
               </li>
               <li>
