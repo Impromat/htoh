@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150504095210) do
-=======
-ActiveRecord::Schema.define(version: 20150504081121) do
->>>>>>> 88a0799536d9c7a5f75097a60da9304e7539c333
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,10 +60,7 @@ ActiveRecord::Schema.define(version: 20150504081121) do
     t.string   "address"
     t.date     "date"
     t.string   "city"
-<<<<<<< HEAD
-=======
     t.string   "category",                                          array: true
->>>>>>> 88a0799536d9c7a5f75097a60da9304e7539c333
     t.boolean  "done",                 default: false
     t.integer  "user_id"
     t.datetime "created_at",                           null: false
