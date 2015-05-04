@@ -1,23 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <h1><%= @task.title %></h1>
-      <p><%= @task.description %></p>
-      <h2><%= @task.price %></h2>
-      <h2><%= @task.date %></h2>
-      <h2><%= @task.category %></h2>
-      <h2><%= @task.done %></h2>
-      <h2><%= image_tag @task.picture.url%></h2>
-      <%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <h1>Formulez une offre</h1>
-      <%= render 'answer' %>
+
+<div id="features">
+  <div id="features-card">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h1><%= @task.title %></h1>
+          <p><%= @task.description %></p>
+          <h2><%= @task.price %></h2>
+          <h2><%= @task.date %></h2>
+          <h2><%= @task.category %></h2>
+          <h2><%= @task.done %></h2>
+          <h2><%= image_tag @task.picture.url%></h2>
+          <%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h1>Formulez une offre</h1>
+          <%= render 'answer' %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
 

@@ -1,28 +1,39 @@
-<h1 class = 'text-center'>Les services proches de chez vous</h1>
+<div id="features">
+  <div id="features-card">
+    <h2>Les services proches de chez vous</h2>
 
-<%= render "searchbar" %>
+    <%= render "searchbar" %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      <%@tasks.each do |task|%>
-        <h3><%= link_to task.title.capitalize.truncate(30), task_path(task.id) %></h3>
-          <p><%= task.description.truncate(50) %></p>
-        <h3>Price : <%= task.price %> €</h3>
-        <div class="resize">
-          <%= image_tag(task.picture) %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <% @tasks.each do |task|%>
+            <div class="col-xs-12 col-sm-6 p10">
+              <div class="subcard">
+
+                <div class="cover-photo" style="<%= 'background:url(' + image_path(task.picture) + ')' %>;background-size:cover">
+                </div>
+
+                <h3><%= link_to task.title.capitalize.truncate(30), task_path(task.id) %></h3>
+                  <p><%= task.description.truncate(50) %></p>
+                <p><strong>Prix proposé : <%= task.price %> €</strong></p>
+                <br>
+                <%= link_to("More details", task_path(task), class: "btn btn-default btn-xs btn-right")%>
+              </div>
+            </div>
+          <%end%>
         </div>
-        <%= link_to("More details", task_path(task), class: "btn btn-default btn-xs btn-right")%>
-      <%end%>
-    </div>
 
-    <div class="col-xs-6">
-      <div id="map" style="width: 500px; height: 600px;">
+        <div class="col-xs-6">
+          <div id="map" style="width: 500px; height: 600px;">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="clear"></div>
 
 
 <% content_for(:after_js) do %>

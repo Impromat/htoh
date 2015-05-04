@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20150504095210) do
+=======
 ActiveRecord::Schema.define(version: 20150504141219) do
+>>>>>>> 05f3a3e156d3f6bc51bda9dabcfb649809f4e967
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,8 +98,13 @@ ActiveRecord::Schema.define(version: 20150504141219) do
     t.string   "name"
     t.string   "token"
     t.datetime "token_expiry"
+<<<<<<< HEAD
+    t.boolean  "admin",                  default: false, null: false
+    t.string   "first_name"
+=======
     t.string   "first_name"
     t.boolean  "admin",                  default: false, null: false
+>>>>>>> 05f3a3e156d3f6bc51bda9dabcfb649809f4e967
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

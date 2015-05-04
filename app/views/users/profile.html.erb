@@ -14,80 +14,77 @@
 </div>
 
 <div class="container" id='tasks'>
-  <div class="grey-card">
+  <div id="tab-grey-card">
     <div id="content">
-        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a id='posted_tasks' href="#red" data-toggle="tab">Annonces postées</a></li>
+      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+          <li class="active"><a id='posted_tasks' href="#red" data-toggle="tab">Annonces postées</a></li>
 
-              <li><a id='done_tasks' href="#blue" data-toggle="tab">Réponses formulées</a></li>
-          </ul>
-          <div id="my-tab-content" class="tab-content">
-              <div class="tab-pane active" id="red">
-                  <h1>Annonces postées</h1>
-                    <div class="container">
-                      <div class="row">
-                        <% @tasks.each do |task| %>
-                          <div class="col-xs-12 col-md-4 text-center">​
-                            <%= task.title %>
-                          </div>
-                        <% end %>
-                      </div>
+            <li><a id='done_tasks' href="#blue" data-toggle="tab">Réponses formulées</a></li>
+        </ul>
+        <div id="my-tab-content" class="tab-content">
+            <div class="tab-pane active" id="red">
+              <h1>Annonces postées</h1>
+              <div class="container">
+                <div class="row">
+                  <% @tasks.each do |task| %>
+                    <div class="col-xs-12 col-md-4 text-center">​
+                      <%= task.title %>
                     </div>
-                    <div class="container">
-                      <div class="row">
-                        <% @tasks.each do |task| %>
-
-                          <% task.bookings.each do |booking| %>
-                            <div class="col-xs-12 col-md-4 text-center">​
-                              <%#= answer.description %>
-                              <br>
-                              <% if booking.accepted.nil? %>
-                                <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
-                                  <%= f.hidden_field :accepted, value: true %>
-                                  <%= f.submit 'Accepter', class: "btn btn-primary" %>
-                                <% end %>
-                                <br>
-                                <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
-                                  <%= f.hidden_field :accepted, value: false %>
-                                  <%= f.submit 'Décliner', class: "btn btn-danger" %>
-                                <% end %>
-                              <% else %>
-                                <%= booking.accepted? ? "Acceptée" : "Déclinée" %>
-                              <% end %>
-                            </div>
-                          <% end %>
-                        <% end %>
-                      </div>
-                    </div>
-                </div>
-
-              <div class="tab-pane" id="blue">
-                <h1>Réponses formulées</h1>
-                <div class="container">
-                  <div class="row">
-                    <% @bookings.each do |booking| %>
-                      <div class="col-xs-12 col-md-4 text-center">​
-                        <%= booking.description %>
-                      </div>
-                      <div class="col-xs-12 col-md-3 text-center">​
-                        <%= booking.accepted == nil ? "En cours" : (booking.accepted ? "Accepté !" : "Refusé mec") %>
-                      </div>
-                    <% end %>
-                  </div>
+                  <% end %>
                 </div>
               </div>
-          </div>
-      </div>
+              <div class="container">
+                <div class="row">
+                  <% @tasks.each do |task| %>
+                    <% task.bookings.each do |booking| %>
+                      <div class="col-xs-12 col-md-4 text-center">​
+                        <%#= answer.description %>
+                        <br>
+                        <% if booking.accepted.nil? %>
+                          <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
+                            <%= f.hidden_field :accepted, value: true %>
+                            <%= f.submit 'Accepter', class: "btn btn-primary" %>
+                          <% end %>
+                          <br>
+                          <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
+                            <%= f.hidden_field :accepted, value: false %>
+                            <%= f.submit 'Décliner', class: "btn btn-danger" %>
+                          <% end %>
+                        <% else %>
+                          <%= booking.accepted? ? "Acceptée" : "Déclinée" %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
 
+        <div class="tab-pane" id="blue">
+          <h1>Réponses formulées</h1>
+          <div class="container">
+            <div class="row">
+              <% @bookings.each do |booking| %>
+                <div class="col-xs-12 col-md-4 text-center">​
+                  <%= booking.description %>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">​
+                  <%= booking.accepted == nil ? "En cours" : (booking.accepted ? "Accepté !" : "Refusé mec") %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $('#tabs').tab();
-        });
-    </script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('#tabs').tab();
+    });
+</script>
 
 </div> <!-- container -->
 
