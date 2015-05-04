@@ -8,8 +8,11 @@ class UsersController < ApplicationController
   def profile
     @user = User.find(params[:user_id])
     authorize @user
-    @answers = @user.bookings
     @tasks = @user.tasks
+    @bookings = Booking.where(user_id: current_user.id)
+
+    # @tasks_ids = @tasks.map { |task| task.id }
+    # @answers = Booking.where(task_id: @tasks_ids)
   end
 
 end

@@ -1,10 +1,5 @@
 class BookingsController < ApplicationController
 
-  after_action :verify_authorized, except:  :index, unless: :devise_or_pages_controller?
-  after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_controller?
-
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-
   def index
     @bookings = policy_scope(Booking)
   end
@@ -28,8 +23,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update_attributes(update_booking_params)
-    redirect_to :back
+    if @booking.update_attributes(update_booking_params)
+      redirect_to "/tasks"
+    else
+      redirect_to :back
+    end
   end
 
   private

@@ -36,7 +36,7 @@ module Account
     private
 
     def task_params
-      params.require(:task).permit(:title, :description, :price, :address, :picture, :date, :category, :status, :city)
+      params.require(:task).permit(:title, :description, :price, :address, :picture, :date, :status, :city, :category)
     end
   end
 end
