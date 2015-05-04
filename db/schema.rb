@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150504095210) do
     t.string   "address"
     t.date     "date"
     t.string   "city"
+    t.string   "category",                                          array: true
     t.boolean  "done",                 default: false
     t.integer  "user_id"
     t.datetime "created_at",                           null: false
