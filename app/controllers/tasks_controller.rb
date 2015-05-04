@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
 
   skip_before_filter :authenticate_user!, only: [:index, :show]
+  after_action :verify_authorized, except:  :index, unless: :devise_or_pages_controller?
+  after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_controller?
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
     @tasks = policy_scope(Task)
@@ -19,6 +23,6 @@ class TasksController < ApplicationController
   # private
 
   # def search_params
-  #   params.permit(:city, :travellers, :date)
+  #   params.permit(:city, :date)
   # end
 end
