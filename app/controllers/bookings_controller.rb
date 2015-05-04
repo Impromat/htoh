@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
-
+    @bookings = policy_scope(Booking)
   end
 
   def new
@@ -17,9 +17,10 @@ class BookingsController < ApplicationController
   def create
     @task = Task.find(params[:task_id])
     @booking = @task.bookings.new(booking_params)
+    @booking.user = current_user
+    authorize @booking
     if @booking.save
-      @booking.update(user_id: current_user.id)
-      redirect_to root_path
+      redirect_to user_profile_path(current_user)
     else
       render :new
     end
@@ -38,7 +39,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:description)
   end
 end
 

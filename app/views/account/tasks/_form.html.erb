@@ -6,7 +6,7 @@
   <%= task.input :city, placeholder:"paris" %>
   <%= task.input :address, id: "user_input_autocomplete_address", placeholder:"Your adress" %>
   <%= task.input :date, id: "user_input_autocomplete_date", placeholder:"choose a date" %>
-  <%= task.input :category, collection: ["Aide administratif", "Babysitting","Bricolage - Travaux", "Compagnie 3e âge", "Courses", "Covoiturage", "Cuisine", "Déménagement", "Education - Soutient", "Faire la queue", "Garage", "Gardiennage", "Jardinnage", "Livraison", "Ménage - Repassage", "Autre"]  %>
+  <%= task.select :category, [["Aide administratif", "Aide administratif"], ["Babysitting", "Babysitting"],["Bricolage - Travaux", "Bricolage - Travaux"], ["Compagnie 3e âge", "Compagnie 3e âge"], ["Courses", "Courses"], ["Covoiturage", "Covoiturage"], ["Cuisine", "Cuisine"], ["Déménagement", "Déménagement"], ["Education - Soutien", "Education - Soutien"], ["Faire la queue", "Faire la queue"], ["Garage", "Garage"], ["Gardiennage", "Gardiennage"], ["Jardinnage", "Jardinnage"], ["Livraison", "Livraison"], ["Ménage - Repassage", "Ménage - Repassage"], ["Autre", "Autre"]]  %>
   <%= task.input :picture%>
 
   <%= task.submit class: "btn btn-danger" %>
