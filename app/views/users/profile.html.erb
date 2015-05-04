@@ -8,10 +8,6 @@
         <%= @user.picture %>
         <%= @user.first_name %>
         <%= @user.name %>
-        <h3>Compétences (catégories de services)</h3>
-        <h3>***** (nb de notes)</h3>
-        <p>
-        </p>
       </div>
     </div>
   </div>
@@ -34,6 +30,8 @@
                    <div>
                   <% @answers.each do |answer| %>
                     <%= answer.description %>
+                    <%= link_to("accepter l'offre", class: "btn btn-primary")%>
+                    <%= link_to("refuser l'offre", class: "btn btn-primary")%>
                   <% end %>
                   </div>
               </div>
