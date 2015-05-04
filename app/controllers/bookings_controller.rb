@@ -1,9 +1,4 @@
-class BookingsController < ApplicationController
-
-  after_action :verify_authorized, except:  :index, unless: :devise_or_pages_controller?
-  after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_controller?
-
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+sclass BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
