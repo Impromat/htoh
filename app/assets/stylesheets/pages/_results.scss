@@ -1,21 +1,37 @@
 .subcard {
   background: white;
   padding: 10px;
-  text-align: center;
   border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
 
+  .announce {
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
 
   .cover-photo {
-    height: 150px;
+    height: 100px;
+    width: 100px;
     background-size: cover;
     background-position: center center;
+    margin-left: 30px;
+    margin-top: 30px;
   }
-}
 
-.lil-pic img {
-  width: 100%;
+  h3 a {
+    color: rgb(79, 79, 79);
+  }
+  h3 a:hover {
+    color: rgb(119, 119, 119);
+  }
+  p {
+    color: rgb(120, 120, 120)
+  }
 }
 
 #map {
   position: fixed;
+  margin-left: 50px;
+  margin-top: 10px;
 }
