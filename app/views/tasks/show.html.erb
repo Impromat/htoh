@@ -1,20 +1,21 @@
 
-<div id="features">
+<div  class="text-center" id="features">
   <div id="features-card">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <h1><%= @task.title %></h1>
-          <p><%= @task.description %></p>
+          <p><%= @task.description.truncate(100) %></p>
+          <div class="img">
+            <%= image_tag @task.picture.url(:medium) %>
+          </div>
           <h2>Prix : <%= @task.price %>€</h2>
           <h2>A partir du : <%= @task.date %></h2>
           <h2>Catégorie : <%= @task.category %></h2>
           <h2><%= @task.done ? "Terminée" : "En cours" %></h2>
-          <div class="img">
-            <%= image_tag @task.picture.url(:medium) %>
-          </div>
+
           <% if current_user == @task.user %>
-            <%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
+            <%= link_to("récapitulatifs des annonces postées",user_profile_path(current_user, anchor: 'tasks'), class: "btn btn-default btn-xs btn-right")%>
           <% end %>
         </div>
       </div>
