@@ -8,6 +8,8 @@
         <%= @user.picture %>
         <%= @user.first_name %>
         <%= @user.name %>
+        <%= link_to "edit", edit_user_registration_path  %>
+
       </div>
     </div>
   </div>
@@ -56,6 +58,7 @@
                           <% end %>
                         </div>
                       <% end %>
+                      vous n'avez pas encore de reçu de proposition
                     <% end %>
                   </div>
                 </li>
