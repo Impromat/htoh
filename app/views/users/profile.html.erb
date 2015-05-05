@@ -17,25 +17,21 @@
   <div id="tab-grey-card">
     <div id="content">
       <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-          <li class="active"><a id='posted_tasks' href="#red" data-toggle="tab">Annonces postées</a></li>
-
-            <li><a id='done_tasks' href="#blue" data-toggle="tab">Réponses formulées</a></li>
-        </ul>
+        <li class="active"><a id='posted_tasks' href="#red" data-toggle="tab">Annonces postées</a></li>
+        <li><a id='done_tasks' href="#blue" data-toggle="tab">Réponses formulées</a></li>
+      </ul>
         <div id="my-tab-content" class="tab-content">
-            <div class="tab-pane active" id="red">
-              <h1>Annonces postées</h1>
-              <div class="container">
-                <div class="row">
-                  <% @tasks.each do |task| %>
-                    <div class="col-xs-12 col-md-4 text-center">​
+          <div class="tab-pane active" id="red">
+            <h3>Annonces postées</h3>
+            <div class="container">
+              <ul class='tasks-list'>
+                <% @tasks.each do |task| %>
+                <li>
+                  <div class="row">
+                    <div class="col-xs-12 col-md-8">​
                       <%= task.title %>
                     </div>
-                  <% end %>
-                </div>
-              </div>
-              <div class="container">
-                <div class="row">
-                  <% @tasks.each do |task| %>
+
                     <% task.bookings.each do |booking| %>
                       <div class="col-xs-12 col-md-4 text-center">​
                         <%#= answer.description %>
@@ -55,13 +51,16 @@
                         <% end %>
                       </div>
                     <% end %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
 
         <div class="tab-pane" id="blue">
-          <h1>Réponses formulées</h1>
+          <h3>Réponses formulées</h3>
           <div class="container">
             <div class="row">
               <% @bookings.each do |booking| %>
