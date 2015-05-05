@@ -4,8 +4,8 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 .padded {
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 .bg-red {
   background: $red;
@@ -39,15 +39,11 @@
   padding-top: 30px;
 }
 
-#tab-grey-card {
-  background-color: #F6F6F6;
-  border-radius: 5px;
-  margin-top: 50px;
-  padding-bottom: 100px;
-}
-
 .alert {
+  text-align: center;
   position: absolute;
+  z-index: 1;
+  width: 100%;
 }
 
 .form-container {
