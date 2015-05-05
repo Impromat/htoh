@@ -29,27 +29,33 @@
                 <li>
                   <div class="row">
                     <div class="col-xs-12 col-md-8">​
-                      <%= task.title %>
-                    </div>
+                      <p><%= link_to task.title, task_path(task) %></p>
+                      <p><%= task.description.truncate(50) %></p>
 
-                    <% task.bookings.each do |booking| %>
-                      <div class="col-xs-12 col-md-4 text-center">​
-                        <%#= answer.description %>
-                        <br>
-                        <% if booking.accepted.nil? %>
-                          <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
-                            <%= f.hidden_field :accepted, value: true %>
-                            <%= f.submit 'Accepter', class: "btn btn-primary" %>
-                          <% end %>
+
+                    </div>
+                    <% if current_user == @user %>
+                      <% task.bookings.each do |booking| %>
+                        <div class="col-xs-12 col-md-4 text-center">​
+                          <%= booking.user.picture %>
+                          <%= link_to booking.user.first_name, user_path(booking.user)%> vous a fait une proposition
+
                           <br>
-                          <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
-                            <%= f.hidden_field :accepted, value: false %>
-                            <%= f.submit 'Décliner', class: "btn btn-danger" %>
+                          <% if booking.accepted.nil? %>
+                            <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
+                              <%= f.hidden_field :accepted, value: true %>
+                              <%= f.submit 'Accepter', class: "btn btn-primary" %>
+                            <% end %>
+                            <br>
+                            <%= form_for [booking.task, booking], url: task_booking_path(booking.task, booking) do |f| %>
+                              <%= f.hidden_field :accepted, value: false %>
+                              <%= f.submit 'Décliner', class: "btn btn-danger" %>
+                            <% end %>
+                          <% else %>
+                            <%= booking.accepted? ? "Acceptée" : "Déclinée" %>
                           <% end %>
-                        <% else %>
-                          <%= booking.accepted? ? "Acceptée" : "Déclinée" %>
-                        <% end %>
-                      </div>
+                        </div>
+                      <% end %>
                     <% end %>
                   </div>
                 </li>
@@ -65,7 +71,8 @@
             <div class="row">
               <% @bookings.each do |booking| %>
                 <div class="col-xs-12 col-md-4 text-center">​
-                  <%= booking.description %>
+                  <p><%= booking.description %></p>
+                  <p><%= booking.user.first_name %></p>
                 </div>
                 <div class="col-xs-12 col-md-3 text-center">​
                   <%= booking.accepted == nil ? "En cours" : (booking.accepted ? "Accepté !" : "Refusé mec") %>

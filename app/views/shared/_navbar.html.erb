@@ -26,8 +26,8 @@
               <% else %>
                 <%= image_tag "http://placehold.it/30x30", class: "img-avatar" %>
               <% end %>
-              <% if current_user.name? %>
-                <%= current_user.name %> <span class="caret"></span>
+              <% if current_user.first_name? %>
+                <%= current_user.first_name %> <span class="caret"></span>
               <% else %>
                 Profile <span class="caret"></span>
               <% end %>
