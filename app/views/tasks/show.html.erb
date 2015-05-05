@@ -6,28 +6,29 @@
         <div class="col-sm-8 col-sm-offset-2">
           <h1><%= @task.title %></h1>
           <p><%= @task.description %></p>
-          <h2><%= @task.price %></h2>
-          <h2><%= @task.date %></h2>
-          <h2><%= @task.category %></h2>
-          <h2><%= @task.done %></h2>
-          <h2><%= image_tag @task.picture.url%></h2>
-          <%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
+          <h2>Prix : <%= @task.price %>€</h2>
+          <h2>A partir du : <%= @task.date %></h2>
+          <h2>Catégorie : <%= @task.category %></h2>
+          <h2><%= @task.done ? "Terminée" : "En cours" %></h2>
+          <div class="img">
+            <%= image_tag @task.picture.url(:medium) %>
+          </div>
+          <% if current_user == @task.user %>
+            <%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
+          <% end %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h1>Formulez une offre</h1>
-          <%= render 'answer' %>
+      <% unless current_user == @task.user %>
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <h1>Formulez une offre</h1>
+            <%= render 'answer' %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
-
-
-<%= link_to("Edit", edit_account_task_path(@task.id), class: "btn btn-default btn-xs btn-right")%>
-
-
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
