@@ -3,20 +3,32 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700|Open+Sans:400,300,700|Raleway:300,400");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "PT Sans", "sans-serif";
 $navbar-font: 'Raleway', "sans-serif";
 
 
 // Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-weight: normal;
+  font-family: "Gotham";
+  src: font-url('GothamSSm-Book.eot');
+  src: font-url('GothamSSm-Book.eot?#iefix') format('embedded-opentype'),
+       font-url('GothamSSm-Book.woff') format('woff'),
+       font-url('GothamSSm-Book.ttf') format('truetype')
+}
+@font-face {
+  font-weight: 100;
+  font-family: "Gotham";
+  src: font-url('gotham-light.eot');
+  src: font-url('gotham-light.eot?#iefix') format('embedded-opentype'),
+       font-url('gotham-light.woff') format('woff'),
+       font-url('gotham-light.ttf') format('truetype')
+}
+
+$gotham: "Gotham", "PT Sans", "sans-serif";
+
+$header-font: $gotham;
+$base-font: $gotham, "Open Sans", "Helvetica", "sans-serif";
+
 
 // Font-size and line-height
 $base-size: 16px;
@@ -32,6 +44,7 @@ $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
 $purple: #6452BD;
+$pink: #FF387B;
 
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222

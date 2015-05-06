@@ -12,94 +12,89 @@
 
   <div id="banner">
     <div class="filter"></div>
-    <h1>Serviu</h1>
-    <br>
-    <p>La Référence du Service</p>
-    <p>entre Particuliers</p>
+    <h1>Be the customer of everyone</h1>
+    <p>QstomR is the absolute marketplace for everything. Ask a service and wait for it.</p>
+    <%= render "tasks/searchbar" %>
   </div>
 
-  <%= render "tasks/searchbar" %>
-  <div id="features">
-    <div id="features-card">
-      <h2>Les différents types de services</h2>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6">
-            <div class="serv-list">
-              <div class="service">
-                <%= image_tag "Administratif.svg", class: "serv_logos" %>
-              <p>Aide administrative</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Babysitting.svg", class: "serv_logos" %>
-                <p>Babysitting</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Bricolage.svg", class: "serv_logos" %>
-                <p>Bricolage - Travaux</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Old.svg", class: "serv_logos" %>
-                <p>Compagnie 3ème age</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Shopping.svg", class: "serv_logos" %>
-                <p>Courses</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Drive.svg", class: "serv_logos" %>
-                <p>Covoiturage</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Cook.svg", class: "serv_logos" %>
-                <p>Cuisine</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Movin.svg", class: "serv_logos" %>
-                <p>Déménagement</p><br>
-              </div>
+  <div id="description">
+    <div class="container text-center">
+      <h2 class="text-center">ask something in...</h2>
+      <div class="row">
+  <!--       <div class="col-xs-12 col-md-6">
+   -->       <!--  <div class="serv-list"> -->
+            <div class="col-xs-12 col-md-3 text-center">
+              <%= image_tag "Administratif.svg", class: "img-responsive" %>
+              <p>Aide administrative</p>
             </div>
-          </div>
+            <div class="col-xs-12 col-md-3 text-center">
+              <%= image_tag "Babysitting.svg", class: "img-responsive" %>
+              <p>Babysitting</p>
+            </div>
+            <div class="col-xs-12 col-md-3 text-center">
+              <%= image_tag "Bricolage.svg", class: "img-responsive" %>
+              <p>Bricolage - Travaux</p>
+            </div>
+            <div class="col-xs-12 col-md-3 text-center">
+              <%= image_tag "Old.svg", class: "img-responsive" %>
+              <p>Compagnie 3ème age</p>
+            </div>
+  <!--           <div class="service">
+              <%= image_tag "Shopping.svg", class: "serv_logos" %>
+              <p>Courses</p><br>
+            </div>
+            <div class="service">
+              <%= image_tag "Drive.svg", class: "serv_logos" %>
+              <p>Covoiturage</p><br>
+            </div>
+            <div class="service">
+              <%= image_tag "Cook.svg", class: "serv_logos" %>
+              <p>Cuisine</p><br>
+            </div>
+            <div class="service">
+              <%= image_tag "Movin.svg", class: "serv_logos" %>
+              <p>Déménagement</p><br>
+            </div> -->
+  <!--         </div>
+   -->      <!-- </div> -->
 
-          <div class="col-xs-12 col-md-6">
-            <div  class="serv-list">
-              <div class="service">
-                <%= image_tag "School.svg", class: "serv_logos" %>
-                <p>Education - Soutien</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Line.svg", class: "serv_logos" %>
-                <p>Faire la queue</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Car.svg", class: "serv_logos" %>
-                <p>Garage</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Guarding.svg", class: "serv_logos" %>
-                <p>Gardiennage</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Garden.svg", class: "serv_logos" %>
-                <p>Jardinage</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Delivery.svg", class: "serv_logos" %>
-                <p>Livraison</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Cleaning.svg", class: "serv_logos" %>
-                <p>Ménage - Repassage</p><br>
-              </div>
-              <div class="service">
-                <%= image_tag "Other.svg", class: "serv_logos" %>
-                <p>Autre</p><br>
-              </div>
+   <!--      <div class="col-xs-12 col-md-6">
+          <div  class="serv-list">
+            <div class="service">
+              <%= image_tag "School.svg", class: "serv_logos" %>
+              <p>Education - Soutien</p>
+            </div>
+            <div class="service">
+              <%= image_tag "Line.svg", class: "serv_logos" %>
+              <p>Faire la queue</p>
+            </div>
+            <div class="service">
+              <%= image_tag "Car.svg", class: "serv_logos" %>
+              <p>Garage</p>
+            </div>
+            <div class="service">
+              <%= image_tag "Guarding.svg", class: "serv_logos" %>
+              <p>Gardiennage</p>
+            </div>
+            <div class="service">
+              <%= image_tag "Garden.svg", class: "serv_logos" %>
+              <p>Jardinage</p>
+            </div>
+            <div class="service">
+              <%= image_tag "Delivery.svg", class: "serv_logos" %>
+              <p>Livraison</p>
+            </div>
+            <div class="service">
+              <%= image_tag "Cleaning.svg", class: "serv_logos" %>
+              <p>Ménage - Repassage</p>
+            </div>
+            <div class="service">
+              <%= image_tag "Other.svg", class: "serv_logos" %>
+              <p>Autre</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
-
 </body>

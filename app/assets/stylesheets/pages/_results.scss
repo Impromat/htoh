@@ -1,6 +1,5 @@
 .subcard {
   background: white;
-  padding: 10px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 2px solid rgba(0, 0, 0, 0.08);
@@ -8,6 +7,20 @@
   .announce {
     padding-left: 20px;
     padding-bottom: 20px;
+  }
+
+  ul {
+    padding-top: 16px;
+    padding-left: 26px;
+    font-size: 25px;
+    text-align: right;
+    margin-right: 10px;
+    a {
+      color: #C7C7C7;
+      &:hover {
+        color: $pink;
+      }
+    }
   }
 
   .cover-photo {
@@ -32,6 +45,11 @@
 
 #map {
   position: fixed;
-  margin-left: 50px;
   margin-top: 10px;
+}
+
+
+#details {
+  background: white;
+  padding: 50px 0;
 }

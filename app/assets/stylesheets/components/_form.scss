@@ -1,3 +1,17 @@
-.form-container {
-  margin-top: 60px;
+.form-inline {
+  input {
+    border-radius: 50px 0 0 50px;
+  }
+  .btn {
+    border-radius: 0 50px 50px 0;
+    line-height: 42px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: none;
+  }
+}
+.signin-container{
+  padding: 100px 0;
+  background: #0B253B;
+  color: #6B8497;
 }
