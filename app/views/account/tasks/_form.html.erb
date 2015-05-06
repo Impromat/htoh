@@ -3,8 +3,8 @@
   <%= task.input :title, placeholder:"title of your task" %>
   <%= task.input :description, as: :text, input_html: { minlenght: 50}, placeholder:"need to wash my car, is it possible to make a proposal" %>
   <%= task.input :price, placeholder:"100 €" %>
-  <%= task.input :city, placeholder:"paris" %>
-  <%= task.input :address, id: "user_input_autocomplete_address", placeholder:"Your adress" %>
+  <%= task.input :city, placeholder:"Paris" %>
+  <%= task.input :address, id: "user_input_autocomplete_address", placeholder:"Rue, code postal & ville svp" %>
   <%= task.input :date, id: "user_input_autocomplete_date", placeholder:"choose a date" %>
   <%= task.input :category, collection: [["Aide administratif", "Aide administratif"], ["Babysitting", "Babysitting"],["Bricolage - Travaux", "Bricolage - Travaux"], ["Compagnie 3e âge", "Compagnie 3e âge"], ["Courses", "Courses"], ["Covoiturage", "Covoiturage"], ["Cuisine", "Cuisine"], ["Déménagement", "Déménagement"], ["Education - Soutien", "Education - Soutien"], ["Faire la queue", "Faire la queue"], ["Garage", "Garage"], ["Gardiennage", "Gardiennage"], ["Jardinnage", "Jardinnage"], ["Livraison", "Livraison"], ["Ménage - Repassage", "Ménage - Repassage"], ["Autre", "Autre"]]  %>
   <%= task.input :picture%>

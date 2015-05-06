@@ -5,8 +5,8 @@
         <%= image_tag @user.picture.url(:medium), class: "img-circle" %>
       </div>​
       <div class="col-xs-12 col-md-8">​
-        <%= @user.first_name %>
-        <%= @user.name %>
+        <h3><%= @user.first_name %><strong><%= @user.name %></strong></h3>
+
         <%= link_to "edit", edit_user_registration_path  %>
 
       </div>
