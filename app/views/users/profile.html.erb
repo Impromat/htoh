@@ -2,10 +2,9 @@
   <div class="grey-card">
     <div class="row">
       <div class="col-xs-12 col-md-4 text-center">​
-        <%= image_tag "http://placehold.it/200x200", class: "img-circle" %>
+        <%= image_tag @user.picture.url(:medium), class: "img-circle" %>
       </div>​
       <div class="col-xs-12 col-md-8">​
-        <%= @user.picture %>
         <%= @user.first_name %>
         <%= @user.name %>
         <%= link_to "edit", edit_user_registration_path  %>
@@ -39,8 +38,9 @@
                     <% if current_user == @user %>
                       <% task.bookings.each do |booking| %>
                         <div class="col-xs-12 col-md-4 text-center">​
-                          <%= booking.user.picture %>
-                          <%= link_to booking.user.first_name, user_path(booking.user)%> vous a fait une proposition !
+
+                          <%= image_tag booking.user.picture %>
+                          <%= link_to booking.user.first_name, user_path(booking.user)%> vous a fait une proposition
 
                           <br>
                           <% if booking.accepted.nil? %>
