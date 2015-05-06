@@ -3,6 +3,7 @@ class Task < ActiveRecord::Base
   has_many :bookings, dependent: :destroy
   has_attached_file :picture,
     styles: { medium: "500x500", thumb: "150x150#" }
+  after_create :send_task_create_email
 
   validates_presence_of :title, :description, :address, :user, :picture
 
@@ -10,4 +11,11 @@ class Task < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+   private
+
+  def send_task_create_email
+    UserMailer.task_create(self.user).deliver
+  end
+
 end
