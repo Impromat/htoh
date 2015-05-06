@@ -38,6 +38,7 @@
                     <% if current_user == @user %>
                       <% task.bookings.each do |booking| %>
                         <div class="col-xs-12 col-md-4 text-center">​
+
                           <%= image_tag booking.user.picture %>
                           <%= link_to booking.user.first_name, user_path(booking.user)%> vous a fait une proposition
 
@@ -57,7 +58,7 @@
                           <% end %>
                         </div>
                       <% end %>
-                      vous n'avez pas encore de reçu de proposition
+                      Vous n'avez pas encore de reçu de proposition
                     <% end %>
                   </div>
                 </li>

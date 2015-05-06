@@ -1,35 +1,62 @@
-
-<div  class="text-center" id="features">
-  <div id="features-card">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h1><%= @task.title %></h1>
-          <p><%= @task.description.truncate(100) %></p>
-          <div class="img">
-            <%= image_tag @task.picture.url(:medium) %>
-          </div>
-          <h2>Prix : <%= @task.price %>€</h2>
-          <h2>A partir du : <%= @task.date %></h2>
-          <h2>Catégorie : <%= @task.category %></h2>
-          <h2><%= @task.done ? "Terminée" : "En cours" %></h2>
-
-          <% if current_user == @task.user %>
-            <%= link_to("récapitulatifs des annonces postées",user_profile_path(current_user, anchor: 'tasks'), class: "btn btn-default btn-xs btn-right")%>
-          <% end %>
-        </div>
+<div id="details">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <h2><%= @task.title %></h2>
+        <p><%= @task.description %></p>
+        <ul class="list-unstyled">
+          <li><span class="label label-danger"><%= @task.price %>€</span></li>
+          <li>A partir du : <%= @task.date.strftime("%e %b %Y") %></li>
+          <li>
+            <% if @task.done %>
+              <span class="label label-success">Terminée</span>
+            <% else %>
+              <span class="label label-defaut">En cours</span>
+            <% end %>
+          </li>
+        </ul>
+        <%= image_tag @task.picture.url(:thumb), class: "img-responsive" %>
       </div>
+      <div class="col-xs-12 col-md-4">
+        <h3>Faites une offre</h3>
+        <%= render 'answer' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div  class="text-center" id="features">
+  <div id="features-card">
+    <h2><%= @task.title %></h2>
+      <p><%= @task.description.truncate(100) %></p>
+      <div >
+        <%= image_tag @task.picture.url(:medium) %>
+      </div>
+    <h3>Prix : <%= @task.price %>€</h3>
+    <h3>A partir du : <%= @task.date %></h3>
+    <h3>Catégorie : <%= @task.category %></h3>
+    <h3><%= @task.done ? "Terminée" : "En cours" %></h3>
+
+    <% if current_user == @task.user %>
+      <%= link_to("récapitulatifs des annonces postées",user_profile_path(current_user, anchor: 'tasks'), class: "btn btn-default btn-xs btn-right")%>
+    <% end %>
+  </div>
+</div>
       <% unless current_user == @task.user %>
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
-            <h1>Formulez une offre</h1>
-            <%= render 'answer' %>
+        <div  class="text-center" id="features">
+          <div id="features-card">
+            <h2>Formulez une offre</h2>
+            <div col-sm-6 col-sm-offset-3>
+              <br>
+                <%= render 'answer' %>
+              <br>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
-</div>
+</div> -->
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
