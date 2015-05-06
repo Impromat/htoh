@@ -39,7 +39,6 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "letter_opener"
-  gem 'bootstrap-datepicker-rails'
 end
 
 group :production do
