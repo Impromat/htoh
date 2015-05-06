@@ -8,8 +8,11 @@ class User < ActiveRecord::Base
   has_many :bookings, dependent: :destroy
   devise :omniauthable, :omniauth_providers => [ :facebook ]
 
-  has_attached_file :avatar,
-    :styles => { :medium => "300x300>", :thumb => "100x100#" }
+  has_attached_file :picture,
+    :styles => { :medium => "300x300>", :thumb => "100x100#" },
+    default_url: ActionController::Base.helpers.asset_path('avatar.jpg')
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -24,11 +27,5 @@ class User < ActiveRecord::Base
     end
   end
 
-  def image(style)
-    if avatar.exists?
-      avatar.url(style)
- #   else
- #     picture
-    end
-  end
+
 end
