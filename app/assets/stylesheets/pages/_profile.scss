@@ -11,6 +11,17 @@
   padding-left: 20px;
 }
 
+.avatar-profile {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  margin-left: 50px;
+}
+
+
+
 .tab-content {
   h3 {
     text-align: center;
@@ -24,6 +35,15 @@
   p {
     color: rgb(120, 120, 120)
   }
+  .lil-pic {
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center center;
+  }
 }
 
 .tasks-list {
@@ -32,18 +52,3 @@
   }
 }
 
-.profile-pic {
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center center;
-}
-
-.lil-pic {
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center center;
-}

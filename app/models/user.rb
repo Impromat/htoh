@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [ :facebook ]
 
   has_attached_file :picture,
-    :styles => { :medium => "300x300>", :thumb => "100x100#" },
+    :styles => { :medium => "250x250>", :thumb => "80x80#" },
     default_url: ActionController::Base.helpers.asset_path('avatar.jpg')
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
