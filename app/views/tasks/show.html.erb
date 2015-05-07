@@ -4,6 +4,7 @@
       <div class="col-xs-12 col-md-8">
         <h2><%= @task.title %></h2>
         <p><%= @task.description %></p>
+        <p><%= @task.category %></p>
         <ul class="list-unstyled">
           <li><span class="label label-danger"><%= @task.price %>€</span></li>
           <li>A partir du : <%= @task.date.strftime("%e %b %Y") %></li>

@@ -5,12 +5,12 @@ class Task < ActiveRecord::Base
     styles: { medium: "500x500", thumb: "150x150#" }
   after_create :send_task_create_email
 
-  validates_presence_of :title, :description, :address, :user, :picture
+  validates_presence_of :title, :description, :address, :user, :picture, :city
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  geocoded_by :city
+  after_validation :geocode, if: :city?
 
    private
 
