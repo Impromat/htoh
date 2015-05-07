@@ -231,6 +231,7 @@ GEM
     rails-assets-jquery (2.1.4)
     rails-assets-slick.js (1.5.2)
       rails-assets-jquery (>= 1.7)
+    rails-assets-sticky-kit (1.1.2)
     rails-assets-underscore (1.8.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -328,6 +329,7 @@ DEPENDENCIES
   rack-timeout
   rails (= 4.2.0)
   rails-assets-slick.js
+  rails-assets-sticky-kit
   rails-assets-underscore
   rails-i18n
   rails_12factor

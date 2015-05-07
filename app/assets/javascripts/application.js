@@ -7,6 +7,7 @@
 //= require gmaps/google
 //= require slick.js.js
 
+
 $(document).ready(function() {
   $('.carousel').slick({
       slidesToShow: 4,
@@ -23,5 +24,12 @@ $(document).ready(function() {
       $('.carousel').slick("slickNext");
     })
 
-
+  // $('#map').affix({
+  //   offset: {
+  //     top: 100,
+  //     bottom: function () {
+  //       return (this.bottom = $('#research-end').outerHeight(true))
+  //     }
+  //   }
+  // })
 })
