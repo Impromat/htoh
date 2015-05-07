@@ -1,4 +1,3 @@
-require Rails.root.join("config/smtp")
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -68,14 +67,6 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
 
-  ActionMailer::Base.smtp_settings = {
-    :port =>           '587',
-    :address =>        'smtp.mandrillapp.com',
-    :user_name =>      ENV['lhoste.mathieu@gmail.com'],
-    :password =>       ENV['nSl2q3G8VI9JilVy9HBXyQ'],
-    :domain =>         'heroku.com',
-    :authentication => :plain
-}
   config.action_mailer.delivery_method = :smtp
 
 
