@@ -15,7 +15,7 @@ class Task < ActiveRecord::Base
   private
 
   def send_task_create_email
-    # UserMailer.task_create(self.user).deliver
+    UserMailer.task_create(self.user).deliver
   end
 
 end
