@@ -14,11 +14,13 @@ $(document).ready(function() {
 
     });
 
-    $('.left').click(function(){
+  $('.left').click(function(){
       $('.carousel').slick("slickPrev");
     })
 
-    $('.right').click(function(){
+  $('.right').click(function(){
       $('.carousel').slick("slickNext");
     })
+
+
 })
