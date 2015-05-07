@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update_attributes(update_booking_params)
-      redirect_to "/tasks"
+      redirect_to user_profile_path(current_user)
     else
       redirect_to :back
     end

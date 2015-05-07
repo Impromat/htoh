@@ -93,8 +93,8 @@ ActiveRecord::Schema.define(version: 20150506144918) do
     t.string   "name"
     t.string   "token"
     t.datetime "token_expiry"
-    t.boolean  "admin",                  default: false, null: false
     t.string   "first_name"
+    t.boolean  "admin",                  default: false, null: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
