@@ -8,6 +8,13 @@ class TasksController < ApplicationController
 
   def index
     @tasks = policy_scope(Task)
+    if params[:city] && params[:city].present?
+      perimetre = (params[:perimetre] || 5).to_i
+      @tasks = @tasks.near(params[:city], perimetre)
+    end
+    if params[:category] && params[:category].present?
+      @tasks = @tasks.where(category: params[:category])
+    end
     @markers = Gmaps4rails.build_markers(@tasks) do |task, marker|
       marker.lat task.latitude
       marker.lng task.longitude
