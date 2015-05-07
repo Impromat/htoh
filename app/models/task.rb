@@ -12,10 +12,10 @@ class Task < ActiveRecord::Base
   geocoded_by :city
   after_validation :geocode, if: :city?
 
-   private
+  private
 
   def send_task_create_email
-    UserMailer.task_create(self.user).deliver
+    # UserMailer.task_create(self.user).deliver
   end
 
 end
