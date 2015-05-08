@@ -3,7 +3,7 @@
     <div class="form-group">
       <%= text_field_tag(:city, params[:city], placeholder: "Votre adresse / ville ?", class: "form-control") %>
        <%= select_tag(:category, options_for_select([["Toutes les catégories", nil], "Aide administratif","Babysitting", "Bricolage - Travaux", "Compagnie 3e âge", "Courses", "Covoiturage", "Cuisine", "Déménagement", "Education - Soutien", "Faire la queue", "Garage", "Gardiennage", "Jardinnage", "Livraison", "Ménage - Repassage", "Autre"], params[:category] || "toutes les catégories"), placeholder: "quelle category ?",class: "form-control") %>
-       <%= select_tag(:perimetre, options_for_select(["Périmètre de recherche (km)", 1, 3, 5, 10, 15, 20], 'Périmètre de recherche' || 10), placeholder: "Quel périmètre ?",class: "form-control") %>
+       <%= select_tag(:perimetre, options_for_select([["Périmètre de recherche (km)", 10], 1, 3, 5, 10, 15, 20],  params[:perimetre] || "Périmètre de recherche (km)"), placeholder: "Quel périmètre ?",class: "form-control") %>
 
       <%= submit_tag("Regardons", class: "btn btn-danger")%>
     </div>

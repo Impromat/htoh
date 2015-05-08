@@ -9,10 +9,18 @@ class Task < ActiveRecord::Base
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
-  geocoded_by :city
-  after_validation :geocode, if: :city?
+  geocoded_by :full_address
+  after_validation :geocode, if: ->(task){ (task.city.present? and task.city_changed?) || (task.address.present? and task.address_changed?) }
 
   private
+
+  def full_address
+    if address
+      "#{address}, #{city}"
+    else
+      city
+    end
+  end
 
   def send_task_create_email
     UserMailer.task_create(self.user).deliver
