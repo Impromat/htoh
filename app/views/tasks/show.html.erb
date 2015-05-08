@@ -3,11 +3,12 @@
     <div class="row">
       <div class="col-xs-12 col-md-8">
         <h2><%= @task.title %></h2>
-        <p><%= @task.description %></p>
-        <p><%= @task.category %></p>
+        <p><strong>Description: </strong><%= @task.description %></p>
+        <p><strong>Catégorie: </strong><%= @task.category %></p>
+        <p><strong>Ville: </strong><%= @task.city %></p>
         <ul class="list-unstyled">
-          <li><span class="label label-danger"><%= @task.price %>€</span></li>
-          <li>A partir du : <%= @task.date.strftime("%e %b %Y") %></li>
+          <li><strong>Date souhaitée: </strong><%= @task.date.strftime("%e %b %Y") %></li>
+          <li><strong>Prix proposé: </strong><span class="label label-danger"><%= @task.price %>€</span></li>
           <li>
             <% if @task.done %>
               <span class="label label-success">Terminée</span>
@@ -15,9 +16,12 @@
               <span class="label label-defaut">En cours</span>
             <% end %>
           </li>
+          <li>
+            Annonce postée par <%= link_to @task.user.first_name, user_profile_path(@task.user_id) %> le <%= @task.created_at.strftime("%e %b %Y") %>
+          </li>
         </ul>
 
-        <div class="img-responsive img-task" style='background: url(<%= image_url @task.picture.url(:medium) %>)'></div>
+        <div class="img-responsive img-task" style='background-image: url(<%= image_url @task.picture.url(:medium) %>)'></div>
       </div>
       <div class="col-xs-12 col-md-4">
         <h3>Proposition / Commentaire</h3>
