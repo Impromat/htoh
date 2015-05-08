@@ -3,7 +3,7 @@
     <div class="row">
 
       <div class="col-xs-12 col-md-4 text-center">​
-        <div class="avatar-profile" style='background: url(<%= image_url @user.picture.url(:medium) %>)'></div>
+        <div class="avatar-profile" style='background-image: url(<%= image_url @user.picture.url(:medium) %>)'></div>
       </div>​
 
       <div class="col-xs-12 col-md-8">​
@@ -48,7 +48,7 @@
                           <% task.bookings.each do |booking| %>
 
                               <div class="col-xs-6 text-center">
-                                <div class="lil-pic" style='background: url(<%= image_url booking.user.picture.url(:thumb) %>)'></div>
+                                <div class="lil-pic" style='background-image: url(<%= image_url booking.user.picture.url(:thumb) %>)'></div>
                                 <p><%= link_to booking.user.first_name, user_profile_path(booking.user)%> vous a fait une proposition !</p>
                               </div>
 
