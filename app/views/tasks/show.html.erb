@@ -16,10 +16,11 @@
             <% end %>
           </li>
         </ul>
-        <%= image_tag @task.picture.url(:medium), class: "img-responsive img-task" %>
+
+        <div class="img-responsive img-task" style='background: url(<%= image_url @task.picture.url(:medium) %>)'></div>
       </div>
       <div class="col-xs-12 col-md-4">
-        <h3>Faites une offre</h3>
+        <h3>Proposition / Commentaire</h3>
         <%= render 'answer' %>
       </div>
     </div>
