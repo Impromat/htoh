@@ -5,6 +5,9 @@
 //= require underscore
 //= require gmaps/google
 //= require slick.js.js
+//= require pickadate/picker
+//= require pickadate/picker.date
+//= require pickadate/translations/fr_FR
 
 
 $(document).ready(function() {
@@ -32,3 +35,13 @@ $(document).ready(function() {
   //   }
   // })
 })
+
+$(document).ready(function() {
+  $('.datepicker').pickadate({
+    close: 'Fermer',
+    hiddenSuffix: "",
+    formatSubmit: "dd/mm/yyyy",
+    format: 'dd/mm/yyyy',
+  });
+
+});

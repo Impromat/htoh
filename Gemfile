@@ -30,6 +30,7 @@ gem "devise-i18n-views"
 gem "coffee-script"
 gem 'omniauth-facebook'
 gem 'activeadmin', github: 'activeadmin'
+gem 'pickadate-rails'
 
 group :development, :test do
   gem "spring"
